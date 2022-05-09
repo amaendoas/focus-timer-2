@@ -4,6 +4,9 @@ const buttonStop = document.querySelector('.stop')
 const buttonSet = document.querySelector('.set')
 const buttonPlus = document.querySelector('.plus')
 const buttonMinus = document.querySelector('.minus')
+const buttonLightMode = document.querySelector('.light')
+const buttonDarkMode = document.querySelector('.dark')
+const html = document.querySelector('html')
 let minutesDisplay = document.querySelector('.minutes')
 let secondsDisplay = document.querySelector('.seconds')
 let minutes = Number(minutesDisplay.textContent)
@@ -89,6 +92,7 @@ buttonSet.addEventListener('click', function () {
   }
   minutes = newMinutes
   updateDisplay(minutes, 0)
+  sounds.pressButton()
 })
 
 buttonPlus.addEventListener('click', function () {
@@ -169,4 +173,18 @@ buttonFireplace.addEventListener('click', function () {
   turnItOff(buttonForest)
   turnItOff(buttonRain)
   music()
+})
+
+buttonLightMode.addEventListener('click', function() {
+  buttonLightMode.classList.add('hide')
+  buttonDarkMode.classList.remove('hide')
+  html.classList.remove('light-mode')
+  html.classList.add('dark-mode')
+})
+
+buttonDarkMode.addEventListener('click', function() {
+  buttonLightMode.classList.remove('hide')
+  buttonDarkMode.classList.add('hide')
+  html.classList.add('light-mode')
+  html.classList.remove('dark-mode')
 })

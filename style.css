@@ -6,9 +6,20 @@
 
 :root {
   font-size: 62.5%;
+}
+
+.dark-mode {
+  --hue: 195;
+  --bg-color: hsl(var(--hue), 5%, 7%);
+  --bg-color-light: hsl(var(--hue), 6%, 17%);
+  --primary-color: hsl(var(--hue), 7%, 78%);
+  --seconday-color: hsl(var(--hue), 74%, 15%);
+} 
+
+.light-mode {
   --hue: 194;
   --bg-color: hsl(var(--hue), 0%, 100%);
-  --bg-color-light: hsla(var(--hue), 9%, 89%, 1);
+  --bg-color-light: hsl(var(--hue), 9%, 89%);
   --primary-color: hsl(var(--hue), 6%, 21%);
   --seconday-color: hsl(var(--hue), 97%, 31%);
 }
@@ -30,23 +41,34 @@ main {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
 }
 
 button {
   border: none;
+  background-color: transparent;
+}
+
+header {
+  display: flex;
+  justify-content: end;
+  margin-bottom: clamp(1rem, 1rem + 5vw, 9.6rem);
+}
+
+header button {
+  margin: clamp(3rem, 3rem + 5vw, 6.4rem) clamp(3rem, 3rem + 5vw, 6.4rem) 0 0;
+  cursor: pointer;
 }
 
 .controls {
   display: flex;
   width: clamp(20rem, 20rem + 15vw, 31.2rem);
   justify-content: space-between;
+  margin-bottom: 1.8rem;
 }
 
 .controls button {
   width: 4.8rem;
   height: 4.8rem;
-  background-color: transparent;
   cursor: pointer;
 }
 
@@ -83,7 +105,6 @@ button {
 @media (max-width: 730px) {
   main {
     flex-direction: column;
-    align-items: center;
   }
 
 }
