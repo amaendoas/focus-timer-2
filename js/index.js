@@ -15,6 +15,10 @@ let buttonForest = document.querySelector('.forest')
 let buttonRain = document.querySelector('.rain')
 let buttonCoffee = document.querySelector('.coffee')
 let buttonFireplace = document.querySelector('.fireplace')
+let volumeForest = document.querySelector('.volume-forest')
+let volumeRain = document.querySelector('.volume-rain')
+let volumeCoffee = document.querySelector('.volume-coffee')
+let volumeFireplace = document.querySelector('.volume-fireplace')
 
 import Sounds from './sounds.js'
 
@@ -187,4 +191,17 @@ buttonDarkMode.addEventListener('click', function() {
   buttonDarkMode.classList.add('hide')
   html.classList.add('light-mode')
   html.classList.remove('dark-mode')
+})
+
+volumeForest.addEventListener('change', function() {
+  (sounds.forestAudio).volume = volumeForest.value/100
+})
+volumeRain.addEventListener('change', function() {
+  (sounds.rainAudio).volume = volumeRain.value/100
+})
+volumeCoffee.addEventListener('change', function() {
+  (sounds.coffeeAudio).volume = volumeCoffee.value/100
+})
+volumeFireplace.addEventListener('change', function() {
+  (sounds.fireplaceAudio).volume = volumeFireplace.value/100
 })
