@@ -11,6 +11,11 @@ export default function Sounds() {
     'https://github.com/maykbrito/automatic-video-creator/blob/master/audios/kichen-timer.mp3?raw=true'
   )
 
+  forestAudio.loop = true
+  rainAudio.loop = true
+  coffeeAudio.loop = true
+  fireplaceAudio.loop = true
+
   function pressButton () {
     buttonPressAudio.play()
   }
@@ -18,6 +23,7 @@ export default function Sounds() {
   function endTimer () {
     kitchenTimer.play()
   }
+
 
   return {
     endTimer,

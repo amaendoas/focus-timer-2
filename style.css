@@ -13,7 +13,7 @@
   --bg-color: hsl(var(--hue), 5%, 7%);
   --bg-color-light: hsl(var(--hue), 6%, 17%);
   --primary-color: hsl(var(--hue), 7%, 78%);
-  --seconday-color: hsl(var(--hue), 74%, 15%);
+  --secondary-color: hsl(var(--hue), 74%, 15%);
 } 
 
 .light-mode {
@@ -21,7 +21,7 @@
   --bg-color: hsl(var(--hue), 0%, 100%);
   --bg-color-light: hsl(var(--hue), 9%, 89%);
   --primary-color: hsl(var(--hue), 6%, 21%);
-  --seconday-color: hsl(var(--hue), 97%, 31%);
+  --secondary-color: hsl(var(--hue), 97%, 31%);
 }
 
 body {
@@ -73,7 +73,7 @@ header button {
 }
 
 .controls button:hover svg path {
-  fill: var(--seconday-color)!important;
+  fill: var(--secondary-color)!important;
 }
 
 .hide {
@@ -149,7 +149,7 @@ input[type='range']::-webkit-slider-thumb {
 }
 
 .active {
-  background-color: var(--seconday-color)!important;
+  background-color: var(--secondary-color)!important;
   transform: scale(1.1);
 }
 
@@ -157,9 +157,22 @@ footer {
   display: flex;
   align-items: center;
   gap: 5px;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
+  opacity: 85%;
+  text-transform: uppercase;
   position: fixed;
   bottom: 7rem;
+}
+
+footer a {
+  font-weight: bold;
+  text-decoration: none;
+  color: hsl(265, 45%, 58%);
+  transition: 300ms;
+}
+
+footer a:hover {
+  color: var(--secondary-color);
 }
 
 @media (max-width: 730px) {
